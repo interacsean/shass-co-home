@@ -1,0 +1,214 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+html, body {
+    margin: 0;
+    min-height: 100vh;
+    /* fallbacks */
+    height: 100%;
+}
+
+html{
+  box-shadow: inset 0 0 33vw 10vh rgba(0,0,0,0.35);
+  background-color: #3D3B54;
+  font-size: 1.15em;
+  text-align: center;
+}
+
+#main{
+
+  /* scrolling so box-shadow background of html stays  */
+  overflow: auto;
+  margin:0 auto;
+  box-sizing: border-box;
+  padding:calc(30vh - 250px) 12% 6rem 12%;
+
+  text-align:left;
+  min-height: 100vh;
+  height: 100%;
+  width:100%;
+  min-width:700px;
+  font-size: 1.15rem;
+}
+
+header{
+  box-sizing: border-box;
+  display: inline-block;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.25);
+  margin-top:1rem;
+  padding: 0.3rem 1rem 0.5rem;
+  background-color: white;
+}
+header>h1{
+  display: inline-block;
+  font-weight: normal;
+  font-size: 2.5rem;
+  margin:0;
+  color:#61c4e5;
+  border-bottom: 2px solid #f37022;
+}
+header>h2{
+  display: block;
+  margin:0.2em 0 0;
+  font-weight: normal;
+  font-size: 1.43rem;
+  color:#87cb98;
+  text-transform: uppercase;
+}
+
+#home ul, #social ul, #contact ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+#home li{
+  display:block;
+  margin: 0 0.5em 1em 1em;
+  padding: 0.5em 0.5em 0.5em 3.25em;
+  font-family: courier, monospace;
+  font-size: 0.85rem;
+  text-indent: -1.2em;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.3);  /*rgba(255,255,255,0.7);*/
+}
+#home li>label {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-weight: bold;
+}
+#home li>span {
+}
+
+/*button*/
+nav>a {
+    display: inline-block;
+    background: #63617A; /*rgba(255,255,255,0.2);*/
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.25);
+    padding: .33em .5em;
+    border-radius: 2px;
+    margin: 0 0.25em 0.75em;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    position: relative;
+    top:0; left:0;
+    transition: top 0.1s ease 0.05s, left 0.1s ease 0.05s;
+}
+nav>a:active{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
+  position: relative;
+  top:2px; left:2px;
+  transition: top 0.1s ease, left 0.1s ease;
+}
+nav>a.-showing:after {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.5em solid transparent;
+    border-top-color: #63617A;
+    width: 1em;
+    height: 1em;
+    content:' ';
+    top: 1.9em;
+}
+
+article.togglable{
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.15s ease;
+}
+article.togglable.-showing{
+  max-height: 500px;
+  margin-left: 2em;
+  opacity: 1;
+  transition: max-height 0.375s ease 0.15s;
+}
+
+/** Popups **/
+.iconLinkList .icon{
+  display: inline-block;
+  line-height: 32px;
+  height: 32px;
+  width: 32px;
+  margin-right: 0.5em;
+}
+.socialLink.-twitter{
+
+}
+.iconLinkList a{
+  vertical-align: top;
+  text-decoration: none;
+  color: #fff;
+}
+.iconLinkList a:hover, .iconLinkList a:active{
+  text-decoration: underline;
+  color: #00B6FF;
+}
+
+.iconLinkList .socialLink{
+  display: block;
+  margin: 0 0 0.25em 0.62em;
+  line-height: 36px;
+}
+
+
+/** Font defaults **/
+p, h1, h2, li, a{
+  /* falling back to most similar looking sans-serif fonts */
+  font-family: 'Source Sans Pro', Geneva, Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+a{
+  color: #00B6FF;
+}
+
+/******* Resolution targetting ****************************************/
+
+/* Medium (tablet) size */
+@media screen and (max-width: 720px ){
+  html{
+    box-shadow: inset 0 0 15vw 5vh rgba(0,0,0,0.25);
+  }
+  header>h1{  font-size: 2.25rem; }
+  header>h2{  font-size: 1.29rem; }
+
+  #main{
+    /*width: calc(100vw - 20px);*/
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 320px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile width */
+@media screen and (max-width: 480px ){
+  html{
+    box-shadow: inset 0 0 15vw 0 rgba(0,0,0,0.15);
+  }
+  #main{
+    padding-top: 0.25rem;
+  }
+  header{
+    width: 100%;
+    text-align: center;
+  }
+  header>h1{  font-size: 1.9rem; }
+  header>h2{  font-size: 1.07rem; }
+  nav>a {
+    /*width:100%;
+    box-sizing:border-box;
+    */
+   display: block;
+   box-sizing:border-box;
+   width:100%;
+   margin:0 0 0.5em 0;
+  }
+}
+
+@media screen and (max-height: 720px){
+  #main{
+    padding-top: 0px;
+  }
+}
