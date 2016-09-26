@@ -55,7 +55,7 @@ header>h2{
   text-transform: uppercase;
 }
 
-#home ul, #social ul, #contact ul{
+#home ul, article.togglable ul{
   list-style-type: none;
   margin:0;
   padding:0;
